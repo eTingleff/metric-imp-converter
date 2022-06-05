@@ -105,27 +105,27 @@ class ConvertHandler {
     let result;
     switch (unit) {
       case 'gal': {
-        result = 'gallon';
+        result = 'gallons';
         break;
       }
       case 'L': {
-        result = 'liter';
+        result = 'liters';
         break;
       }
       case 'lbs': {
-        result = 'pound';
+        result = 'pounds';
         break;
       }
       case 'kg': {
-        result = 'kilogram';
+        result = 'kilograms';
         break;
       }
       case 'mi': {
-        result = 'mile';
+        result = 'miles';
         break;
       }
       case 'km': {
-        result = 'kilometer';
+        result = 'kilometers';
       }
     }
 
@@ -156,8 +156,8 @@ class ConvertHandler {
   };
 
   getString(initNum, initUnit, returnNum, returnUnit) {
-    let input = `${initNum} ${this.spellOutUnit(initUnit)}${initNum === 1 ? '' : 's'}`;
-    let output = `${returnNum} ${this.spellOutUnit(returnUnit)}${returnNum === 1 ? '' : 's'}`;
+    let input = `${initNum} ${this.spellOutUnit(initUnit)}`;
+    let output = `${returnNum} ${this.spellOutUnit(returnUnit)}`;
     let result = `${input} converts to ${output}`;
 
     return result;
