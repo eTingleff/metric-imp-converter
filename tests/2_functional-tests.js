@@ -21,7 +21,7 @@ suite('Functional Tests', () => {
             assert.equal(res.body.initUnit, 'L');
             assert.approximately(res.body.returnNum, 2.641721, 0.01);
             assert.equal(res.body.returnUnit, 'gal');
-            assert.equal(res.body.string, '10 liters converts to 2.6417217685798895 gallons');
+            assert.equal(res.body.string, '10 liters converts to 2.64172 gallons');
             done();
           });
       });

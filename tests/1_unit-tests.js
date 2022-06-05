@@ -125,17 +125,17 @@ suite('Unit Tests', () => {
   });
 
   test('ConvertHandler should correctly convert L to gal', (done) => {
-    assert.approximately(convertHandler.convert(6, 'L'), 1.585032, 0.01);
+    assert.approximately(convertHandler.convert(6, 'L'), 1.58503, 0.01);
     done();
   });
 
   test('ConvertHandler should correctly convert mi to km', (done) => {
-    assert.approximately(convertHandler.convert(6, 'mi'), 9.656064, 0.01);
+    assert.approximately(convertHandler.convert(6, 'mi'), 9.65606, 0.01);
     done();
   });
 
   test('ConvertHandler should correctly convert km to mi', (done) => {
-    assert.approximately(convertHandler.convert(6, 'km'), 3.728227, 0.01);
+    assert.approximately(convertHandler.convert(6, 'km'), 3.72822, 0.01);
     done();
   });
 
