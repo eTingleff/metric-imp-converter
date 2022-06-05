@@ -31,12 +31,11 @@ module.exports = function (app) {
     }
 
     if (invalidInputs.length) {
-      const response = {
-        message: 'Invalid input',
-        invalidInputs,
-      };
+      const string = invalidInputs.length === 2
+        ? 'invalid number and unit'
+        : `invalid ${invalidInputs[0]}`;
 
-      return res.status(400).json(response);
+      return res.send(string);
     }
 
     const returnNum = convertHandler.convert(initNum, initUnit);
