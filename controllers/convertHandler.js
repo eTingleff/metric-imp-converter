@@ -147,12 +147,12 @@ class ConvertHandler {
 
       result = result.toFixed(5);
     } else if (initUnit === 'lbs' || initUnit === 'kg') {
-      converter = 100000;
+      converter = 10000;
       result = initUnit === 'lbs'
         ? (initNum * (lbsToKg * converter)) / converter
         : (initNum / (lbsToKg * converter)) * converter;
 
-      result = result.toFixed(6);
+      result = result.toFixed(5);
     } else if (initUnit === 'mi' || initUnit === 'km') {
       converter = 10000;
       result = initUnit === 'mi'
