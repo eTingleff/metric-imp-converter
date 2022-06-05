@@ -137,22 +137,32 @@ class ConvertHandler {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
+    let converter;
 
     if (initUnit === 'gal' || initUnit === 'L') {
+      converter = 10000;
       result = initUnit === 'gal'
-        ? initNum * galToL
-        : initNum / galToL;
+        ? (initNum * (galToL * converter)) / converter
+        : (initNum / (galToL * converter)) * converter;
+
+      result = result.toFixed(5);
     } else if (initUnit === 'lbs' || initUnit === 'kg') {
+      converter = 100000;
       result = initUnit === 'lbs'
-        ? initNum * lbsToKg
-        : initNum / lbsToKg;
+        ? (initNum * (lbsToKg * converter)) / converter
+        : (initNum / (lbsToKg * converter)) * converter;
+
+      result = result.toFixed(6);
     } else if (initUnit === 'mi' || initUnit === 'km') {
+      converter = 10000;
       result = initUnit === 'mi'
-        ? initNum * miToKm
-        : initNum / miToKm;
+        ? (initNum * (miToKm * converter)) / converter
+        : (initNum / (miToKm * converter)) * converter;
+
+      result = result.toFixed(5);
     }
 
-    return result;
+    return parseFloat(result, 10) ;
   };
 
   getString(initNum, initUnit, returnNum, returnUnit) {
