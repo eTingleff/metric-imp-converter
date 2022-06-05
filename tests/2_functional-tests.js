@@ -31,10 +31,7 @@ suite('Functional Tests', () => {
           .get('/api/convert')
           .query({ input: '32g' })
           .end((err, res) => {
-            assert.equal(res.status, 400);
-            assert.equal(res.body.message, 'Invalid input');
-            assert.lengthOf(res.body.invalidInputs, 1)
-            assert.equal(res.body.invalidInputs[0], 'unit')
+            assert.equal(res.text, 'invalid unit')
             done();
           });
       });
@@ -44,10 +41,7 @@ suite('Functional Tests', () => {
           .get('/api/convert')
           .query({ input: '1/2/3km' })
           .end((err, res) => {
-            assert.equal(res.status, 400);
-            assert.equal(res.body.message, 'Invalid input');
-            assert.lengthOf(res.body.invalidInputs, 1);
-            assert.equal(res.body.invalidInputs[0], 'number');
+            assert.equal(res.text, 'invalid number');
             done();
           });
       });
@@ -57,11 +51,7 @@ suite('Functional Tests', () => {
           .get('/api/convert')
           .query({ input: '1/2/3mm' })
           .end((err, res) => {
-            assert.equal(res.status, 400);
-            assert.equal(res.body.message, 'Invalid input');
-            assert.lengthOf(res.body.invalidInputs, 2);
-            assert.equal(res.body.invalidInputs[0], 'number');
-            assert.equal(res.body.invalidInputs[1], 'unit');
+            assert.equal(res.text, 'invalid number and unit');
             done();
           });
       });
@@ -76,7 +66,7 @@ suite('Functional Tests', () => {
             assert.equal(res.body.initUnit, 'gal');
             assert.approximately(res.body.returnNum, 3.785412, 0.01);
             assert.equal(res.body.returnUnit, 'L');
-            assert.equal(res.body.string, '1 gallon converts to 3.78541 liters');
+            assert.equal(res.body.string, '1 gallons converts to 3.78541 liters');
             done();
           });
       });
