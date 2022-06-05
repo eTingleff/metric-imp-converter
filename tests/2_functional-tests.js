@@ -19,7 +19,7 @@ suite('Functional Tests', () => {
             assert.equal(res.status, 200);
             assert.equal(res.body.initNum, 10);
             assert.equal(res.body.initUnit, 'L');
-            assert.approximately(res.body.returnNum, 2.641721, 0.01);
+            assert.approximately(res.body.returnNum, 2.64172, 0.01);
             assert.equal(res.body.returnUnit, 'gal');
             assert.equal(res.body.string, '10 liters converts to 2.64172 gallons');
             done();
@@ -64,7 +64,7 @@ suite('Functional Tests', () => {
             assert.equal(res.status, 200);
             assert.equal(res.body.initNum, 1);
             assert.equal(res.body.initUnit, 'gal');
-            assert.approximately(res.body.returnNum, 3.785412, 0.01);
+            assert.approximately(res.body.returnNum, 3.78541, 0.01);
             assert.equal(res.body.returnUnit, 'L');
             assert.equal(res.body.string, '1 gallons converts to 3.78541 liters');
             done();

@@ -140,7 +140,7 @@ suite('Unit Tests', () => {
   });
 
   test('ConvertHandler should correctly convert lbs to kg', (done) => {
-    assert.approximately(convertHandler.convert(6, 'lbs'), 2.721554, 0.01);
+    assert.approximately(convertHandler.convert(6, 'lbs'), 2.72155, 0.01);
     done();
   });
 
